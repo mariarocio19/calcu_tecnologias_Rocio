@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Calculadora Científica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Contenedor general de la calculadora -->
+    <div class="calculator-container">
+        <!-- Título de la calculadora -->
+        <h1 class="main-title">Mi Calculadora Científica</h1>
+
+        <!-- Contenedor de la calculadora -->
+        <div class="calculator">
+            <!-- Pantalla de la calculadora (barra de entrada manual) -->
+            <input type="text" class="display" id="inputNumbers" placeholder="Introduce números aquí" autofocus>
+
+            <!-- Botones de la calculadora -->
+            <div class="buttons">
+                <!-- Fila 1 -->
+                <button class="button" onclick="appendNumber('7')">7</button>
+                <button class="button" onclick="appendNumber('8')">8</button>
+                <button class="button" onclick="appendNumber('9')">9</button>
+                <button class="button operator" onclick="guardarOperador('/')">/</button>
+                <button class="button operator" onclick="guardarOperador('*')">*</button>
+
+                <!-- Fila 2 -->
+                <button class="button" onclick="appendNumber('4')">4</button>
+                <button class="button" onclick="appendNumber('5')">5</button>
+                <button class="button" onclick="appendNumber('6')">6</button>
+                <button class="button operator" onclick="guardarOperador('-')">-</button>
+                <button class="button operator" onclick="guardarOperador('+')">+</button>
+
+                <!-- Fila 3 -->
+                <button class="button" onclick="appendNumber('1')">1</button>
+                <button class="button" onclick="appendNumber('2')">2</button>
+                <button class="button" onclick="appendNumber('3')">3</button>
+                <button class="button" onclick="calcularCuadrado()">x²</button>
+                <button class="button" onclick="calcularResultado()">=</button>
+
+                <!-- Fila 4 -->
+                <button class="button" onclick="appendNumber('0')">0</button>
+                <button class="button" onclick="appendComma()">,</button>
+                <button class="button" onclick="clearDisplay()">C</button>
+                <button class="button" id="modulo" onclick="mod()">|X|</button>
+                <button class="button" id="factorial" onclick="fact()">X!</button>
+
+                <!-- Fila 5 (Científicas) -->
+                <button class="button" id="seno" onclick="calcularSeno()">sin</button>
+                <button class="button" id="coseno" onclick="calcularCoseno()">cos</button>
+                <button class="button" id="tangente" onclick="calcularTangente()">tan</button>
+                <button class="button" id="raizCuadrada" onclick="calcularRaizCuadrada()">√</button>
+
+                <!-- Fila 6 (CSV) -->
+                <button class="button" id="sumatorio" onclick="sumatorio()">Sumatorio</button>
+                <button class="button" id="ordenar" onclick="ordenar()">Ordenar</button>
+                <button class="button" id="revertir" onclick="revertir()">Revertir</button>
+                <button class="button" id="media" onclick="calcularMedia()">Calcular Media</button>
+
+                <!-- Inputs de eliminación y potencia personalizada -->
+                <input type="text" id="eliminarElemento" placeholder="Elemento a eliminar">
+                <button class="button" id="quitar" onclick="quitarElemento()">Eliminar Elemento</button>
+                <input type="text" id="exponente" placeholder="Introduce el exponente">
+                <button class="button" id="elevarPotencia" onclick="elevarAPotencia()">Elevar a la Potencia</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animación de carga -->
+    <div id="loading" style="display:none;">Cargando...</div>
+
+    <!-- Enlace al script JavaScript -->
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
